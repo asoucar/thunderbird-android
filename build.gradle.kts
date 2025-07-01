@@ -45,5 +45,5 @@ tasks.register("testsOnCi") {
 
 tasks.named<Wrapper>("wrapper") {
     gradleVersion = libs.versions.gradle.get()
-    distributionType = Wrapper.DistributionType.ALL
+    distributionType = Wrapper.DistributionType.BIN
 }
