@@ -28,12 +28,6 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@8379f6a1328ee0e06e2bb424dadb7b159856a326
-      - name: Make gradlew executable
-        run: chmod +x ./gradlew
-  quality:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
       - name: Quality - Spotless
         run: ./gradlew spotlessCheck
 
@@ -45,6 +39,7 @@ jobs:
 
       - name: Quality - Dependency Guard
         run: ./gradlew dependencyGuard
+
   testing:
     needs: build
     runs-on: ubuntu-latest
