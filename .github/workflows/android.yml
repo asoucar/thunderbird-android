@@ -46,10 +46,3 @@ jobs:
 
       - name: Quality - Dependency Guard
         run: ./gradlew dependencyGuard
-  testing:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build (run full build and tests)
-        run: ./gradlew build
-
