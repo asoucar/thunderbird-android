@@ -169,7 +169,6 @@ android {
         }
     }
 
-    @Suppress("UnstableApiUsage")
     bundle {
         language {
             // Don't split by language. Otherwise our in-app language switcher won't work.
