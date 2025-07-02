@@ -98,9 +98,11 @@ jobs:
       - name: Build (run full build and tests)
         run: ./gradlew build
 
-      - uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
+      - name: Store reports
+        if: failure()
+        uses: actions/upload-artifact@v4
         with:
-          name: test-results
-          path: java-junit.xml
-
+          name: reports
+          path: |
+            **/build/reports/
+            **/build/test-results/
