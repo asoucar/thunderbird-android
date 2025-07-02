@@ -2,12 +2,15 @@ package net.thunderbird.core.logging
 
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
+import kotlin.test.fail
 import org.junit.Test
 
 class LogSinkTest {
 
     @Test
     fun `canLog should return true for same level`() {
+        //TODO: UNDO FAILING TEST
+        fail("testing logging")
         // Arrange
         val testSubject = TestLogSink(LogLevel.INFO)
 
