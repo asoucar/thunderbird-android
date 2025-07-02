@@ -98,11 +98,13 @@ jobs:
       - name: Build (run full build and tests)
         run: ./gradlew build
 
-      - name: Store reports
-        if: failure()
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - name: Test Report
+        uses: dorny/test-reporter@v2
+        if: ${{ !cancelled() }}
         with:
-          name: reports
-          path: |
-            **/build/reports/
-            **/build/test-results/
+            name: Tests
+            path: |
+              **/build/reports/
+              **/build/test-results/
+            reporter: java-junit
+
